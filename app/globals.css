@@ -1,26 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #000000;
+  --foreground: #ffffff;
+  --brand-pink: #E6007E;
+  --brand-dark-gray: #2E2D2C;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: 'Roboto', sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  overflow-x: hidden;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+}
+
+/* Swiper Custom Styles */
+.swiper-pagination-bullet {
+  background: white !important;
+  opacity: 0.5 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #E6007E !important;
+  opacity: 1 !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: white !important;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: #E6007E !important;
+}
+
+.video-swiper .swiper-button-next,
+.video-swiper .swiper-button-prev,
+.premium-swiper .swiper-button-next,
+.premium-swiper .swiper-button-prev,
+.models-swiper .swiper-button-next,
+.models-swiper .swiper-button-prev {
+  color: white !important;
+  background: rgba(0, 0, 0, 0.5) !important;
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+}
+
+.video-swiper .swiper-button-next:hover,
+.video-swiper .swiper-button-prev:hover,
+.premium-swiper .swiper-button-next:hover,
+.premium-swiper .swiper-button-prev:hover,
+.models-swiper .swiper-button-next:hover,
+.models-swiper .swiper-button-prev:hover {
+  background: #E6007E !important;
+}
+
+.video-swiper .swiper-button-next::after,
+.video-swiper .swiper-button-prev::after,
+.premium-swiper .swiper-button-next::after,
+.premium-swiper .swiper-button-prev::after,
+.models-swiper .swiper-button-next::after,
+.models-swiper .swiper-button-prev::after {
+  font-size: 20px !important;
+}
+
+/* Ocultar navegación por defecto de Swiper */
+.video-swiper .swiper-button-next,
+.video-swiper .swiper-button-prev,
+.premium-swiper .swiper-button-next,
+.premium-swiper .swiper-button-prev,
+.models-swiper .swiper-button-next,
+.models-swiper .swiper-button-prev {
+  display: none !important;
+}
+
+/* Controlar el ancho de las slides para mostrar 4.5 cards */
+.video-swiper .swiper-slide {
+  width: calc((100% - 64px) / 4.5) !important;
+  flex-shrink: 0 !important;
+  height: auto !important;
+}
+
+.premium-swiper .swiper-slide {
+  width: calc((100% - 64px) / 4.5) !important;
+  flex-shrink: 0 !important;
+  height: auto !important;
+}
+
+.models-swiper .swiper-slide {
+  width: calc((100% - 64px) / 4.5) !important;
+  flex-shrink: 0 !important;
+  height: auto !important;
+}
+
+@media (max-width: 1023px) {
+  .video-swiper .swiper-slide {
+    width: calc((100% - 48px) / 3.5) !important;
+  }
+  .premium-swiper .swiper-slide {
+    width: calc((100% - 48px) / 3.5) !important;
+  }
+  .models-swiper .swiper-slide {
+    width: calc((100% - 48px) / 3.5) !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .video-swiper .swiper-slide {
+    width: calc((100% - 32px) / 2.5) !important;
+  }
+  .premium-swiper .swiper-slide {
+    width: calc((100% - 32px) / 2.5) !important;
+  }
+  .models-swiper .swiper-slide {
+    width: calc((100% - 32px) / 2.5) !important;
+  }
+}
+
+@media (max-width: 639px) {
+  .video-swiper .swiper-slide {
+    width: calc((100% - 16px) / 1.5) !important;
+  }
+  .premium-swiper .swiper-slide {
+    width: calc((100% - 16px) / 1.5) !important;
+  }
+  .models-swiper .swiper-slide {
+    width: calc((100% - 16px) / 1.5) !important;
+  }
+}
+
+.releases-swiper .swiper-button-next,
+.releases-swiper .swiper-button-prev {
+  color: white !important;
+  background: rgba(230, 0, 126, 0.3) !important;
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 50% !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+.releases-swiper .swiper-button-next:hover,
+.releases-swiper .swiper-button-prev:hover {
+  background: #E6007E !important;
+}
+
+.releases-swiper .swiper-button-next::after,
+.releases-swiper .swiper-button-prev::after {
+  font-size: 24px !important;
+  font-weight: bold !important;
 }

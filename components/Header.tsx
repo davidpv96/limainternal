@@ -152,23 +152,23 @@ export default function Header({ onMenuClick, isSidebarOpen }: HeaderProps) {
       {/* Contenedor de búsqueda desplegable - solo en móvil */}
       {isSearchOpen && (
         <div className="fixed top-16 md:top-20 left-0 right-0 bg-white z-50 shadow-lg lg:hidden w-full overflow-x-hidden">
-          <div className="px-4 py-4 w-full max-w-full">
-            <div className="flex items-center gap-3 w-full">
+          <div className="px-3 py-3 w-full max-w-full">
+            <div className="flex items-center gap-2 w-full">
               <div className="flex-1 relative min-w-0">
                 <input
                   type="text"
                   placeholder="Buscar videos"
-                  className="w-full max-w-full bg-gray-100 text-gray-900 placeholder-gray-500 rounded-lg px-4 py-3 pr-12 text-sm focus:outline-none focus:ring-2 focus:ring-[#E6007E] focus:bg-white transition-all"
+                  className="w-full max-w-full bg-gray-100 text-gray-900 placeholder-gray-500 rounded-lg px-3 py-2.5 pr-10 text-sm focus:outline-none focus:ring-2 focus:ring-[#E6007E] focus:bg-white transition-all"
                   autoFocus
                   onFocus={() => setIsSearchFocused(true)}
                   onBlur={() => setIsSearchFocused(false)}
                 />
                 <button
-                  className="absolute right-2 top-1/2 -translate-y-1/2 bg-[#E6007E] text-white rounded-lg px-3 py-2 hover:bg-[#E6007E]/90 transition-colors"
+                  className="absolute right-1.5 top-1/2 -translate-y-1/2 bg-[#E6007E] text-white rounded-md px-2 py-1.5 hover:bg-[#E6007E]/90 transition-colors"
                   aria-label="Buscar"
                 >
                   <svg
-                    className="w-5 h-5"
+                    className="w-4 h-4"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -184,11 +184,11 @@ export default function Header({ onMenuClick, isSidebarOpen }: HeaderProps) {
               </div>
               <button
                 onClick={() => setIsSearchOpen(false)}
-                className="text-gray-600 hover:text-gray-900 transition-colors"
+                className="text-gray-600 hover:text-gray-900 transition-colors flex-shrink-0"
                 aria-label="Cerrar búsqueda"
               >
                 <svg
-                  className="w-6 h-6"
+                  className="w-5 h-5"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"

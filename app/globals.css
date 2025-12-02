@@ -134,13 +134,16 @@ body {
 
 @media (max-width: 639px) {
   .video-swiper .swiper-slide {
-    width: calc((100% - 16px) / 1.5) !important;
+    width: calc((100% - 12px) / 1.2) !important;
+    max-width: 85% !important;
   }
   .premium-swiper .swiper-slide {
-    width: calc((100% - 16px) / 1.5) !important;
+    width: calc((100% - 12px) / 1.2) !important;
+    max-width: 85% !important;
   }
   .models-swiper .swiper-slide {
-    width: calc((100% - 16px) / 1.5) !important;
+    width: calc((100% - 12px) / 1.2) !important;
+    max-width: 85% !important;
   }
 }
 

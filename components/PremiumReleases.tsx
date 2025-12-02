@@ -107,7 +107,7 @@ export default function PremiumReleases({ title, releases }: PremiumReleasesProp
         {/* Right side - Carousel con efecto peek */}
         <div className="relative overflow-visible w-full order-2 lg:order-none">
           <div 
-            className="relative h-[280px] md:h-[420px] flex items-center justify-center w-full cursor-grab active:cursor-grabbing"
+            className="relative h-[320px] md:h-[420px] flex items-center justify-center w-full cursor-grab active:cursor-grabbing"
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
@@ -147,7 +147,7 @@ export default function PremiumReleases({ title, releases }: PremiumReleasesProp
               return (
                 <div
                   key={release.id}
-                  className={`absolute left-1/2 transition-all duration-500 ease-in-out w-[70%] md:w-[55%] max-w-full md:max-w-[550px] ${
+                  className={`absolute left-1/2 transition-all duration-500 ease-in-out w-[85%] md:w-[55%] max-w-full md:max-w-[550px] ${
                     !isActive ? 'cursor-pointer' : ''
                   }`}
                   style={{

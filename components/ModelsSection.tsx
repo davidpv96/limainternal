@@ -57,14 +57,16 @@ export default function ModelsSection({ title, models }: ModelsSectionProps) {
         }}
         modules={[Navigation]}
         spaceBetween={12}
-        slidesPerView={2}
+        slidesPerView={1.2}
         slidesPerGroup={1}
+        centeredSlides={true}
         className="models-swiper"
         breakpoints={{
           640: {
             slidesPerView: 2.5,
             slidesPerGroup: 2,
             spaceBetween: 16,
+            centeredSlides: false,
           },
           768: {
             slidesPerView: 3.5,

@@ -63,14 +63,16 @@ export default function VideoSection({ title, videos }: VideoSectionProps) {
         }}
         modules={[Navigation]}
         spaceBetween={12}
-        slidesPerView={2}
+        slidesPerView={1.2}
         slidesPerGroup={1}
+        centeredSlides={true}
         className="video-swiper"
         breakpoints={{
           640: {
             slidesPerView: 2.5,
             slidesPerGroup: 2,
             spaceBetween: 16,
+            centeredSlides: false,
           },
           768: {
             slidesPerView: 3.5,

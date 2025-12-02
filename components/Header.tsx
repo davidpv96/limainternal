@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 interface HeaderProps {
@@ -11,6 +11,21 @@ interface HeaderProps {
 export default function Header({ onMenuClick, isSidebarOpen }: HeaderProps) {
   const [isSearchFocused, setIsSearchFocused] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+
+  // Prevenir scroll horizontal cuando se abre el buscador
+  useEffect(() => {
+    if (isSearchOpen) {
+      document.body.style.overflowX = 'hidden';
+      document.documentElement.style.overflowX = 'hidden';
+    } else {
+      document.body.style.overflowX = '';
+      document.documentElement.style.overflowX = '';
+    }
+    return () => {
+      document.body.style.overflowX = '';
+      document.documentElement.style.overflowX = '';
+    };
+  }, [isSearchOpen]);
 
   return (
     <>
@@ -151,14 +166,15 @@ export default function Header({ onMenuClick, isSidebarOpen }: HeaderProps) {
 
       {/* Contenedor de búsqueda desplegable - solo en móvil */}
       {isSearchOpen && (
-        <div className="fixed top-16 md:top-20 left-0 right-0 bg-white z-50 shadow-lg lg:hidden w-full overflow-x-hidden">
-          <div className="px-3 py-3 w-full max-w-full">
-            <div className="flex items-center gap-2 w-full">
-              <div className="flex-1 relative min-w-0">
+        <div className="fixed top-16 md:top-20 left-0 right-0 bg-white z-50 shadow-lg lg:hidden w-screen overflow-x-hidden" style={{ maxWidth: '100vw' }}>
+          <div className="px-3 py-3 w-full" style={{ maxWidth: '100%', boxSizing: 'border-box' }}>
+            <div className="flex items-center gap-2 w-full" style={{ maxWidth: '100%' }}>
+              <div className="flex-1 relative min-w-0" style={{ maxWidth: '100%' }}>
                 <input
                   type="text"
                   placeholder="Buscar videos"
-                  className="w-full max-w-full bg-gray-100 text-gray-900 placeholder-gray-500 rounded-lg px-3 py-2.5 pr-10 text-sm focus:outline-none focus:ring-2 focus:ring-[#E6007E] focus:bg-white transition-all"
+                  className="w-full bg-gray-100 text-gray-900 placeholder-gray-500 rounded-lg px-3 py-2.5 pr-10 text-base focus:outline-none focus:ring-2 focus:ring-[#E6007E] focus:bg-white transition-all"
+                  style={{ fontSize: '16px', maxWidth: '100%', boxSizing: 'border-box' }}
                   autoFocus
                   onFocus={() => setIsSearchFocused(true)}
                   onBlur={() => setIsSearchFocused(false)}

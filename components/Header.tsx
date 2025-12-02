@@ -151,14 +151,14 @@ export default function Header({ onMenuClick, isSidebarOpen }: HeaderProps) {
 
       {/* Contenedor de búsqueda desplegable - solo en móvil */}
       {isSearchOpen && (
-        <div className="fixed top-16 md:top-20 left-0 right-0 bg-white z-50 shadow-lg lg:hidden">
-          <div className="px-4 py-4">
-            <div className="flex items-center gap-3">
-              <div className="flex-1 relative">
+        <div className="fixed top-16 md:top-20 left-0 right-0 bg-white z-50 shadow-lg lg:hidden w-full overflow-x-hidden">
+          <div className="px-4 py-4 w-full max-w-full">
+            <div className="flex items-center gap-3 w-full">
+              <div className="flex-1 relative min-w-0">
                 <input
                   type="text"
                   placeholder="Buscar videos"
-                  className="w-full bg-gray-100 text-gray-900 placeholder-gray-500 rounded-lg px-4 py-3 pr-12 text-sm focus:outline-none focus:ring-2 focus:ring-[#E6007E] focus:bg-white transition-all"
+                  className="w-full max-w-full bg-gray-100 text-gray-900 placeholder-gray-500 rounded-lg px-4 py-3 pr-12 text-sm focus:outline-none focus:ring-2 focus:ring-[#E6007E] focus:bg-white transition-all"
                   autoFocus
                   onFocus={() => setIsSearchFocused(true)}
                   onBlur={() => setIsSearchFocused(false)}
